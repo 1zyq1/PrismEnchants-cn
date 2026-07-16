@@ -1,0 +1,21 @@
+name: PrismEnchants
+version: 1.4.1
+main: com.prismenchants.PrismEnchants
+api-version: '1.16'
+author: kostaskiou1
+description: "55 custom enchantments up to level VIII with rarity tiers, gambling books, click-to-apply, scrolls, enchanter and tinkerer. 12 languages, 1.16 to latest."
+website: "https://www.spigotmc.org"
+
+commands:
+  prismenchants:
+    description: "PrismEnchants main command: list, enchanter, give, scroll, reload."
+    usage: "/pe <list|enchanter|give|scroll|reload>"
+    aliases: [pe, enchants]
+
+permissions:
+  prismenchants.use:
+    description: "Open the enchanter shop and use enchant books."
+    default: true
+  prismenchants.admin:
+    description: "Give enchant books/scrolls and reload the config."
+    default: op
