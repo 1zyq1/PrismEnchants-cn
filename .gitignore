@@ -4,8 +4,8 @@
 compiled/
 temp/
 decompiled_full/
-com/
-META-INF/
+/com/
+/META-INF/
 
 # Ignore all jar files by default
 *.jar
