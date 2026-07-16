@@ -11,7 +11,7 @@ decompiled_full/
 *.jar
 # Keep library jars and final build output
 !lib/*.jar
-!PrismEnchants-中文.jar
+!PrismEnchants-*.jar
 
 # IDE / editor
 .classpath
