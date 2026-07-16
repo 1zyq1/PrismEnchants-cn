@@ -143,6 +143,12 @@ implements Listener {
         if (!this.charge(player, n)) {
             return;
         }
+        // 10% failure chance — you pay but get nothing
+        if (ThreadLocalRandom.current().nextDouble() < 0.10) {
+            player.sendMessage(this.lang().msg("messages.shop-failed", new String[0]));
+            this.play(player, Sound.ENTITY_VILLAGER_NO, 1.0f);
+            return;
+        }
         ArrayList<CustomEnchant> arrayList = new ArrayList<CustomEnchant>();
         for (CustomEnchant customEnchant : this.manager.all()) {
             if (!enumSet.contains((Object)customEnchant.rarity()) || !this.manager.isEnabled(customEnchant)) continue;

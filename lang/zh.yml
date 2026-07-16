@@ -13,6 +13,7 @@ messages:
   no-enchants: "&7该物品没有自定义附魔。"
   stripped: "&7已将 &f{enchant} &7剥离为附魔书。"
   shop-no-tier: "&c该等级暂无可用附魔。"
+  shop-failed: "&c附魔失败了！经验已被消耗。"
   shop-rolled: "&d你获得了 &f{enchant}&d!"
   need-levels: "&c你需要 &f{cost} &c等级。"
   players-only: "&c仅限玩家。"
