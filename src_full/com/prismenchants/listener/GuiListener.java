@@ -145,7 +145,9 @@ implements Listener {
         }
         // 10% failure chance — you pay but get nothing
         if (ThreadLocalRandom.current().nextDouble() < 0.10) {
-            player.sendMessage(this.lang().msg("messages.shop-failed", new String[0]));
+            String failMsg = this.lang().msg("messages.shop-failed", new String[0]);
+            if (failMsg.equals("messages.shop-failed")) failMsg = "&c附魔失败了！经验已被消耗。";
+            player.sendMessage(failMsg);
             this.play(player, Sound.ENTITY_VILLAGER_NO, 1.0f);
             return;
         }
