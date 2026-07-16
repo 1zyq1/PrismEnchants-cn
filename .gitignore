@@ -1,0 +1,51 @@
+# PrismEnchants-中文 .gitignore
+
+# Compiled / build outputs
+compiled/
+temp/
+decompiled_full/
+com/
+META-INF/
+
+# Ignore all jar files by default
+*.jar
+# Keep library jars and final build output
+!lib/*.jar
+!PrismEnchants-中文.jar
+
+# IDE / editor
+.classpath
+.project
+.settings/
+.vscode/
+.idea/
+*.iml
+
+# System
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+__pycache__/
+*.pyc
+*.pyo
+
+# Codegraph
+.codegraph/
+
+# OpenCode
+.omo/
+
+# Original JAR (unmodified)
+PrismEnchants.jar
+
+# Temporary/utility files
+src/
+cfr.jar
+compile_filelist.txt
+filelist.txt
+verify*.py
+check_*.py
+fix_*.py
+replace_descriptions.py
+compile2.bat
