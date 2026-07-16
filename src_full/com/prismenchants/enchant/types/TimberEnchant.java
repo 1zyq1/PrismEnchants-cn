@@ -18,7 +18,7 @@ import org.bukkit.inventory.ItemStack;
 public class TimberEnchant
 extends CustomEnchant {
     public TimberEnchant() {
-        super("timber", "\u4f10\u6728", Rarity.EPIC, 1, ItemCategory.AXE);
+        super("timber", "\u4f10\u6728", Rarity.LEGENDARY, 1, ItemCategory.AXE);
     }
 
     @Override

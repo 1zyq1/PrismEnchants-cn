@@ -16,7 +16,7 @@ import org.bukkit.util.Vector;
 public class VolleyEnchant
 extends CustomEnchant {
     public VolleyEnchant() {
-        super("volley", "\u9f50\u5c04", Rarity.EPIC, 8, ItemCategory.BOW);
+        super("volley", "\u9f50\u5c04", Rarity.MYTHIC, 8, ItemCategory.BOW);
     }
 
     @Override

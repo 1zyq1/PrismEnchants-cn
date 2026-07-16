@@ -15,7 +15,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 public class DeflectionEnchant
 extends CustomEnchant {
     public DeflectionEnchant() {
-        super("deflection", "\u504f\u8f6c", Rarity.RARE, 8, ItemCategory.ARMOR);
+        super("deflection", "\u504f\u8f6c", Rarity.LEGENDARY, 8, ItemCategory.ARMOR);
     }
 
     private double reduction(int n) {

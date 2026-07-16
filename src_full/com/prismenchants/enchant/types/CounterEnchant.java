@@ -15,7 +15,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 public class CounterEnchant
 extends CustomEnchant {
     public CounterEnchant() {
-        super("counter", "\u53cd\u51fb", Rarity.EPIC, 8, ItemCategory.ARMOR);
+        super("counter", "\u53cd\u51fb", Rarity.LEGENDARY, 8, ItemCategory.ARMOR);
     }
 
     private int chance(int n) {

@@ -13,7 +13,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 public class AngelicEnchant
 extends CustomEnchant {
     public AngelicEnchant() {
-        super("angelic", "\u5929\u4f7f\u4e4b\u4f51", Rarity.RARE, 2, ItemCategory.BOOTS);
+        super("angelic", "\u5929\u4f7f\u4e4b\u4f51", Rarity.MYTHIC, 2, ItemCategory.BOOTS);
     }
 
     @Override

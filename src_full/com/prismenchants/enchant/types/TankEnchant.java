@@ -14,7 +14,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 public class TankEnchant
 extends CustomEnchant {
     public TankEnchant() {
-        super("tank", "\u5766\u514b", Rarity.EPIC, 8, ItemCategory.ARMOR);
+        super("tank", "\u5766\u514b", Rarity.LEGENDARY, 8, ItemCategory.ARMOR);
     }
 
     private double reduction(int n) {

@@ -16,7 +16,7 @@ import org.bukkit.potion.PotionEffectType;
 public class RegrowthEnchant
 extends CustomEnchant {
     public RegrowthEnchant() {
-        super("regrowth", "\u518d\u751f", Rarity.EPIC, 8, ItemCategory.ARMOR);
+        super("regrowth", "\u518d\u751f", Rarity.LEGENDARY, 8, ItemCategory.ARMOR);
     }
 
     @Override

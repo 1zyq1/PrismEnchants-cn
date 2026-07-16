@@ -14,7 +14,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 public class LastStandEnchant
 extends CustomEnchant {
     public LastStandEnchant() {
-        super("laststand", "\u80cc\u6c34\u4e00\u6218", Rarity.EPIC, 8, ItemCategory.ARMOR);
+        super("laststand", "\u80cc\u6c34\u4e00\u6218", Rarity.MYTHIC, 8, ItemCategory.ARMOR);
     }
 
     private double reduction(int n) {

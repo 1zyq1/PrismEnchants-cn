@@ -18,7 +18,7 @@ import org.bukkit.inventory.ItemStack;
 public class VeinminerEnchant
 extends CustomEnchant {
     public VeinminerEnchant() {
-        super("veinminer", "\u8fde\u9501\u6316\u77ff", Rarity.EPIC, 8, ItemCategory.PICKAXE);
+        super("veinminer", "\u8fde\u9501\u6316\u77ff", Rarity.LEGENDARY, 8, ItemCategory.PICKAXE);
     }
 
     @Override

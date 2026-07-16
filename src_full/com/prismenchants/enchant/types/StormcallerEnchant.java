@@ -16,7 +16,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 public class StormcallerEnchant
 extends CustomEnchant {
     public StormcallerEnchant() {
-        super("stormcaller", "\u98ce\u66b4\u53ec\u5524", Rarity.EPIC, 8, ItemCategory.ARMOR);
+        super("stormcaller", "\u98ce\u66b4\u53ec\u5524", Rarity.MYTHIC, 8, ItemCategory.ARMOR);
     }
 
     @Override

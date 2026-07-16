@@ -15,7 +15,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class AutoRepairEnchant
 extends CustomEnchant {
     public AutoRepairEnchant() {
-        super("autorepair", "\u81ea\u52a8\u4fee\u590d", Rarity.RARE, 8, ItemCategory.TOOL);
+        super("autorepair", "\u81ea\u52a8\u4fee\u590d", Rarity.LEGENDARY, 8, ItemCategory.TOOL);
     }
 
     @Override
