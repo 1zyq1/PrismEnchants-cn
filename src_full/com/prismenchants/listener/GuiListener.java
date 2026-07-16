@@ -12,6 +12,7 @@ import com.prismenchants.gui.TinkererGUI;
 import com.prismenchants.item.ItemFactory;
 import com.prismenchants.util.Keys;
 import com.prismenchants.util.Lang;
+import com.prismenchants.util.Text;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.Map;
@@ -146,7 +147,7 @@ implements Listener {
         // 10% failure chance — you pay but get nothing
         if (ThreadLocalRandom.current().nextDouble() < 0.10) {
             String failMsg = this.lang().msg("messages.shop-failed", new String[0]);
-            if (failMsg.equals("messages.shop-failed")) failMsg = "&c附魔失败了！经验已被消耗。";
+            if (failMsg.equals("messages.shop-failed")) failMsg = Text.of("&c你的运气不好，这一次失败了。");
             player.sendMessage(failMsg);
             this.play(player, Sound.ENTITY_VILLAGER_NO, 1.0f);
             return;

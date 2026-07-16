@@ -13,7 +13,7 @@ messages:
   no-enchants: "&7That item has no custom enchants."
   stripped: "&7Stripped &f{enchant} &7back into a book."
   shop-no-tier: "&cNo enchants available for that tier yet."
-  shop-failed: "&cEnchanting failed! The experience was consumed."
+  shop-failed: "&cBad luck! This attempt failed."
   shop-rolled: "&dYou rolled &f{enchant}&d!"
   need-levels: "&cYou need &f{cost} &clevels for that."
   players-only: "&cPlayers only."
