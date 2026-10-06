@@ -5,6 +5,7 @@ package com.prismenchants.listener;
 
 import com.prismenchants.enchant.CustomEnchant;
 import com.prismenchants.enchant.EnchantManager;
+import com.prismenchants.util.SafeBreak;
 import java.util.Map;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -23,6 +24,10 @@ implements Listener {
 
     @EventHandler(priority=EventPriority.HIGH, ignoreCancelled=true)
     public void onBreak(BlockBreakEvent blockBreakEvent) {
+        // 连锁/范围挖掘由 SafeBreak 触发的事件不再二次处理，避免递归与重复结算
+        if (SafeBreak.isFiring()) {
+            return;
+        }
         Player player = blockBreakEvent.getPlayer();
         ItemStack itemStack = player.getInventory().getItemInMainHand();
         for (Map.Entry<CustomEnchant, Integer> entry : this.manager.getEnchants(itemStack).entrySet()) {

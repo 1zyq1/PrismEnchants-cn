@@ -6,6 +6,7 @@ package com.prismenchants.enchant.types;
 import com.prismenchants.enchant.CustomEnchant;
 import com.prismenchants.enchant.ItemCategory;
 import com.prismenchants.enchant.Rarity;
+import com.prismenchants.util.SafeBreak;
 import java.util.ArrayDeque;
 import java.util.HashSet;
 import java.util.List;
@@ -31,6 +32,9 @@ extends CustomEnchant {
         if (!player.isSneaking()) {
             return;
         }
+        if (block.hasMetadata("pe_placed")) {
+            return;
+        }
         Material material = block.getType();
         if (!material.name().endsWith("_ORE") && material != Material.ANCIENT_DEBRIS) {
             return;
@@ -45,7 +49,7 @@ extends CustomEnchant {
             Block block2 = (Block)arrayDeque.poll();
             if (!block2.equals(block)) {
                 if (block2.getType() != material) continue;
-                block2.breakNaturally(itemStack);
+                SafeBreak.breakBlock(player, block2, itemStack);
             }
             for (int i = -1; i <= 1; ++i) {
                 for (int j = -1; j <= 1; ++j) {

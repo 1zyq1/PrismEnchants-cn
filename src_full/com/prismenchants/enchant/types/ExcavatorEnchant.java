@@ -6,6 +6,7 @@ package com.prismenchants.enchant.types;
 import com.prismenchants.enchant.CustomEnchant;
 import com.prismenchants.enchant.ItemCategory;
 import com.prismenchants.enchant.Rarity;
+import com.prismenchants.util.SafeBreak;
 import java.util.List;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -32,13 +33,16 @@ extends CustomEnchant {
         if (!ExcavatorEnchant.mineable(block.getType())) {
             return;
         }
+        if (block.hasMetadata("pe_placed")) {
+            return;
+        }
         ItemStack itemStack = player.getInventory().getItemInMainHand();
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
                 for (int k = -1; k <= 1; ++k) {
                     Block block2;
                     if (i == 0 && j == 0 && k == 0 || !ExcavatorEnchant.mineable((block2 = block.getRelative(i, j, k)).getType())) continue;
-                    block2.breakNaturally(itemStack);
+                    SafeBreak.breakBlock(player, block2, itemStack);
                 }
             }
         }

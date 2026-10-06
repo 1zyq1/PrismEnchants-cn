@@ -3,7 +3,7 @@ import subprocess
 import glob
 import shutil
 
-WORK = r"C:\Users\1zyq1\Desktop\新建文件夹 (2)"
+WORK = os.path.dirname(os.path.abspath(__file__))
 COMPILED_DIR = os.path.join(WORK, "compiled")
 SPIGOT_API = r"C:\Users\1zyq1\.m2\repository\org\spigotmc\spigot-api\1.21.4-R0.1-SNAPSHOT\spigot-api-1.21.4-R0.1-SNAPSHOT.jar"
 JAVA_HOME = r"C:\Program Files\Java\jdk-25.0.2"

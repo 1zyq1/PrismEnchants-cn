@@ -2,7 +2,7 @@ import os
 import shutil
 import subprocess
 
-WORK = r"C:\Users\1zyq1\Desktop\新建文件夹 (2)"
+WORK = os.path.dirname(os.path.abspath(__file__))
 TEMP = os.path.join(WORK, "temp")
 COMPILED = os.path.join(WORK, "compiled")
 JAR_ORIG = os.path.join(WORK, "PrismEnchants.jar")

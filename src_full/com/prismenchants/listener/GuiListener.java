@@ -32,6 +32,8 @@ import org.bukkit.persistence.PersistentDataType;
 public class GuiListener
 implements Listener {
     private static final double REFUND_RATE = 0.85;
+    // 分解师出售返还比例（40%）
+    private static final double TINKERER_REFUND_RATE = 0.40;
     private final EnchantManager manager;
 
     // Minecraft 1.21.4: XP points needed to go from level-1 to level
@@ -226,7 +228,7 @@ implements Listener {
             return;
         }
         int xpValue = totalXpForLevels(n);
-        int refundXp = (int)(xpValue * REFUND_RATE);
+        int refundXp = (int)(xpValue * TINKERER_REFUND_RATE);
         if (refundXp > 0) setPlayerTotalXp(player, getPlayerTotalXp(player) + refundXp);
         player.sendMessage(this.lang().msg("messages.tinkerer-sold", "count", String.valueOf(n2), "xp", String.valueOf(refundXp)));
         this.play(player, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0f);

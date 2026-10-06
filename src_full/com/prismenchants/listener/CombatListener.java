@@ -35,14 +35,15 @@ implements Listener {
         Player player = this.resolveAttacker(entity);
         if (player != null && entityDamageByEntityEvent.getEntity() instanceof LivingEntity) {
             LivingEntity livingEntity = (LivingEntity) entityDamageByEntityEvent.getEntity();
-            ItemStack itemInHand = player.getInventory().getItemInMainHand();
-            for (Map.Entry<CustomEnchant, Integer> entry : this.manager.getEnchants(itemInHand).entrySet()) {
-                if (!this.manager.isEnabled(entry.getKey()) || !entry.getKey().category().matches(itemInHand.getType())) continue;
-                entry.getKey().onAttack(player, livingEntity, entry.getValue(), entityDamageByEntityEvent);
-            }
             if (entity instanceof Projectile) {
-                Projectile projectile = (Projectile)entity;
-                this.handleArrowHit(player, livingEntity, projectile, entityDamageByEntityEvent);
+                // 远程：只结算箭矢上记录的远程附魔，避免切换主手后误触发近战附魔
+                this.handleArrowHit(player, livingEntity, (Projectile)entity, entityDamageByEntityEvent);
+            } else {
+                ItemStack itemInHand = player.getInventory().getItemInMainHand();
+                for (Map.Entry<CustomEnchant, Integer> entry : this.manager.getEnchants(itemInHand).entrySet()) {
+                    if (!this.manager.isEnabled(entry.getKey()) || !entry.getKey().category().matches(itemInHand.getType())) continue;
+                    entry.getKey().onAttack(player, livingEntity, entry.getValue(), entityDamageByEntityEvent);
+                }
             }
         }
         if (entityDamageByEntityEvent.getEntity() instanceof Player) {

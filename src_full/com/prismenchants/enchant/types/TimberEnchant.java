@@ -6,6 +6,7 @@ package com.prismenchants.enchant.types;
 import com.prismenchants.enchant.CustomEnchant;
 import com.prismenchants.enchant.ItemCategory;
 import com.prismenchants.enchant.Rarity;
+import com.prismenchants.util.SafeBreak;
 import java.util.ArrayDeque;
 import java.util.HashSet;
 import java.util.List;
@@ -32,6 +33,9 @@ extends CustomEnchant {
         if (!this.isLog(material)) {
             return;
         }
+        if (block.hasMetadata("pe_placed")) {
+            return;
+        }
         ItemStack itemStack = player.getInventory().getItemInMainHand();
         HashSet<Block> hashSet = new HashSet<Block>();
         ArrayDeque<Block> arrayDeque = new ArrayDeque<Block>();
@@ -41,7 +45,7 @@ extends CustomEnchant {
         while (!arrayDeque.isEmpty() && hashSet.size() <= n2) {
             Block block2 = (Block)arrayDeque.poll();
             if (!block2.equals(block)) {
-                block2.breakNaturally(itemStack);
+                SafeBreak.breakBlock(player, block2, itemStack);
             }
             for (int i = -1; i <= 1; ++i) {
                 for (int j = 0; j <= 1; ++j) {

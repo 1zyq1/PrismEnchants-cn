@@ -21,7 +21,7 @@ extends CustomEnchant {
 
     @Override
     public List<String> description(int n) {
-        return List.of("&7\u751f\u547d\u4f4e\u4e8e 30% \u65f6\u83b7\u5f97", "&a\u518d\u751f " + n + " &7\u6548\u679c\u3002");
+        return List.of("&7\u751f\u547d\u4f4e\u4e8e 30% \u65f6\u83b7\u5f97", "&a\u518d\u751f\u6548\u679c&7(\u6700\u9ad8 II, \u968f\u7b49\u7ea7\u5ef6\u957f)\u3002");
     }
 
     @Override
@@ -29,7 +29,9 @@ extends CustomEnchant {
         double d = player.getMaxHealth();
         double d2 = player.getHealth() - entityDamageByEntityEvent.getFinalDamage();
         if (d2 > 0.0 && d2 <= d * 0.3 && !player.hasPotionEffect(PotionEffectType.REGENERATION)) {
-            player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 80, n - 1));
+            int amplifier = Math.min(n - 1, 1);
+            int duration = 60 + n * 20;
+            player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, duration, amplifier));
         }
     }
 }
