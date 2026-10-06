@@ -32,7 +32,7 @@ public final class ItemFactory {
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setDisplayName(Text.of(customEnchant.rarity().color() + "\u2726 " + customEnchant.displayName() + " " + EnchantManager.roman(n)));
         ArrayList<String> arrayList = new ArrayList<String>();
-        arrayList.add(Text.of("&8" + customEnchant.rarity().colored() + " &8\u2022 &7" + customEnchant.category().display()));
+        arrayList.add(Text.of("&8" + customEnchant.rarity().color() + ItemFactory.lang().msg(customEnchant.rarity().key(), new String[0]) + " &8\u2022 &7" + ItemFactory.lang().msg(customEnchant.category().key(), new String[0])));
         arrayList.add("");
         for (String string : customEnchant.description(n)) {
             arrayList.add(Text.of(string));

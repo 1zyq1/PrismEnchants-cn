@@ -3,8 +3,10 @@
  */
 package com.prismenchants.enchant;
 
+import com.prismenchants.PrismEnchants;
 import com.prismenchants.enchant.CustomEnchant;
 import com.prismenchants.util.Keys;
+import com.prismenchants.util.Lang;
 import com.prismenchants.util.Text;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -191,13 +193,15 @@ public final class EnchantManager {
         if (itemStack == null || !itemStack.hasItemMeta()) {
             return;
         }
+        Lang lang = PrismEnchants.get() == null ? null : PrismEnchants.get().lang();
+        String protectedLine = lang == null ? "Protected" : Text.plain(lang.msg("items.protected", new String[0]));
         ItemMeta itemMeta = itemStack.getItemMeta();
         List<String> existing = itemMeta.hasLore() ? itemMeta.getLore() : new ArrayList<>();
         List<String> keep = new ArrayList<>();
         if (existing != null) {
             for (String line : existing) {
                 String plain = Text.plain(line);
-                if (plain.startsWith("\u00bb ") || plain.startsWith("Protected")) continue;
+                if (plain.startsWith("\u00bb ") || plain.startsWith("Protected") || plain.equals(protectedLine)) continue;
                 keep.add(line);
             }
         }
@@ -209,7 +213,7 @@ public final class EnchantManager {
             newLore.add(Text.of("\u00bb " + customEnchant.rarity().color() + customEnchant.displayName() + (customEnchant.maxLevel() > 1 ? " " + string : "")));
         }
         if (this.isProtected(itemStack)) {
-            newLore.add(Text.of("&bProtected &7(safe from destroy)"));
+            newLore.add(lang == null ? Text.of("&bProtected &7(safe from destroy)") : lang.msg("items.protected", new String[0]));
         }
         List<String> finalLore = new ArrayList<>(newLore);
         finalLore.addAll(keep);

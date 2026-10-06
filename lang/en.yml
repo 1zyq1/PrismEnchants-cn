@@ -26,6 +26,17 @@ messages:
   reloaded: "&aPrismEnchants reloaded."
   tinkerer-sold: "&aSold &f{count} &aitem(s) for &f{xp} &aXP points."
   tinkerer-empty: "&7Place enchanted items to sell first."
+  list-off: " &c(off)"
+  list-max: "max {level}"
+  help-title: "&5✦ &dPrismEnchants"
+  help:
+    - "&7/pe list"
+    - "&7/pe enchanter"
+    - "&7/pe tinkerer"
+  help-admin:
+    - "&7/pe give <enchant> [level]"
+    - "&7/pe scroll <white|black>"
+    - "&7/pe reload"
 items:
   book-success: "&aSuccess: &f{percent}%"
   book-destroy: "&cDestroy: &f{percent}%"
@@ -42,6 +53,7 @@ items:
     - "&7and returns it as a book."
     - ""
     - "&7Click onto an item, or use an anvil."
+  protected: "&bProtected &7(safe from destroy)"
 gui:
   enchanter-title: "&5✦ &dEnchanter"
   tinkerer-title: "&5✦ &dTinkerer"
@@ -61,3 +73,23 @@ gui:
   sell-desc:
     - "&7Place enchanted gear/books above,"
     - "&7then click to sell them for XP."
+rarity:
+  common: "Common"
+  uncommon: "Uncommon"
+  rare: "Rare"
+  epic: "Epic"
+  legendary: "Legendary"
+  mythic: "Mythic"
+category:
+  sword: "Swords"
+  axe: "Axes"
+  melee: "Swords & Axes"
+  pickaxe: "Pickaxes"
+  tool: "Tools"
+  bow: "Bows"
+  helmet: "Helmets"
+  chestplate: "Chestplates"
+  leggings: "Leggings"
+  boots: "Boots"
+  armor: "Armor"
+  all: "Any item"

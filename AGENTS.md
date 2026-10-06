@@ -33,4 +33,4 @@
 - 物品状态通过 PersistentDataContainer 存储，键定义在 `util/Keys.java`（`ench_<id>`、`book_*`、`scroll_type`、`protected`、`gui_action`）。`EnchantManager.refreshLore` 会重建 lore，并跳过以 `» ` 或 `Protected` 开头的行；两处要一起改。
 - 战斗结算区分伤害来源：`CombatListener.onDamage` 里投射物伤害只走 `handleArrowHit`（读取箭矢 PDC 上的 `ARROW_ENCHANTS`），只有近战才用主手物品的附魔。别用“当前主手物品”给投射物结算 `onAttack`，否则射箭后切武器会误触发近战附魔。
 - `GuiListener` 用自带的 1.21.4 经验表（`totalXpForLevels`、`REFUND_RATE = 0.85`）把配置里的等级成本换算为**固定经验点数**，而不是 `player.giveExpLevels`。该文件及其他少数文件含手工修改/注释，并非纯反编译代码。
-- 面向玩家的文本在 `lang/*.yml`（13 种语言，回退 `en`，`config.yml` 默认 `zh`）。仍存在硬编码英文：`EnchantManager` 的保护 lore 一行、`PrismCommand.help`/`listEnchants`、`ItemCategory.display()` —— 做“完全中文化”任务时需一并处理。
+- 面向玩家的文本在 `lang/*.yml`（13 种语言，`config.yml` 默认 `zh`）。取值按“数据目录选中语言 → jar 内同语言 → 数据目录 en → jar 内 en”逐级回退，所以新增键不需要玩家删旧语言文件。稀有度/分类的键为 `rarity.<name>` / `category.<name>`（由 `Rarity.key()` / `ItemCategory.key()` 生成）。附魔**名称与描述仍硬编码**在各 `enchant/types/*.java`（`super(...)` 与 `description()`），切换语言不会变。

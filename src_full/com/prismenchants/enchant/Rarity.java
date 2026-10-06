@@ -33,6 +33,10 @@ public enum Rarity {
         return this.display;
     }
 
+    public String key() {
+        return "rarity." + this.name().toLowerCase(java.util.Locale.ROOT);
+    }
+
     public String colored() {
         return this.color + this.display;
     }

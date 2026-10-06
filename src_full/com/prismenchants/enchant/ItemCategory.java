@@ -73,5 +73,9 @@ public enum ItemCategory {
             default -> this.name().charAt(0) + this.name().substring(1).toLowerCase();
         };
     }
+
+    public String key() {
+        return "category." + this.name().toLowerCase(java.util.Locale.ROOT);
+    }
 }
 

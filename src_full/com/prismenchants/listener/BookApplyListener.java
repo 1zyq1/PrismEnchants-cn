@@ -86,7 +86,7 @@ implements Listener {
             return;
         }
         if (!customEnchant.category().matches(itemStack2.getType())) {
-            player.sendMessage(this.lang().msg("messages.apply-wrong-item", "category", customEnchant.category().display()));
+            player.sendMessage(this.lang().msg("messages.apply-wrong-item", "category", this.lang().msg(customEnchant.category().key(), new String[0])));
             this.play(player, Sound.ENTITY_VILLAGER_NO, 1.0f);
             return;
         }

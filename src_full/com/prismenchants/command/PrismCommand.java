@@ -91,22 +91,24 @@ TabCompleter {
     }
 
     private void help(CommandSender commandSender) {
-        commandSender.sendMessage(Text.of("&5\u2726 &dPrismEnchants"));
-        commandSender.sendMessage(Text.of("&7/pe list"));
-        commandSender.sendMessage(Text.of("&7/pe enchanter"));
-        commandSender.sendMessage(Text.of("&7/pe tinkerer"));
+        commandSender.sendMessage(this.lang().msg("messages.help-title", new String[0]));
+        for (String string : this.lang().list("messages.help")) {
+            commandSender.sendMessage(string);
+        }
         if (commandSender.hasPermission("prismenchants.admin")) {
-            commandSender.sendMessage(Text.of("&7/pe give <enchant> [level]"));
-            commandSender.sendMessage(Text.of("&7/pe scroll <white|black>"));
-            commandSender.sendMessage(Text.of("&7/pe reload"));
+            for (String string : this.lang().list("messages.help-admin")) {
+                commandSender.sendMessage(string);
+            }
         }
     }
 
     private void listEnchants(CommandSender commandSender) {
         commandSender.sendMessage(this.lang().msg("messages.list-header", "count", String.valueOf(this.manager.count())));
         for (CustomEnchant customEnchant : this.manager.all()) {
-            String string = this.manager.isEnabled(customEnchant) ? "" : " &c(off)";
-            commandSender.sendMessage(Text.of(" " + customEnchant.rarity().color() + customEnchant.displayName() + " &8[" + customEnchant.category().display() + ", max " + this.manager.maxLevel(customEnchant) + "]" + string));
+            String string = this.manager.isEnabled(customEnchant) ? "" : this.lang().msg("messages.list-off", new String[0]);
+            String string2 = this.lang().msg(customEnchant.category().key(), new String[0]);
+            String string3 = this.lang().msg("messages.list-max", "level", String.valueOf(this.manager.maxLevel(customEnchant)));
+            commandSender.sendMessage(Text.of(" " + customEnchant.rarity().color() + customEnchant.displayName() + " &8[" + string2 + ", " + string3 + "]" + string));
         }
     }
 

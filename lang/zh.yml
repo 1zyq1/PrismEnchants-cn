@@ -26,6 +26,17 @@ messages:
   reloaded: "&aPrismEnchants 已重载。"
   tinkerer-sold: "&a已出售 &f{count} &a件物品，获得 &f{xp} &a经验点数。"
   tinkerer-empty: "&7请先放置附魔物品以出售。"
+  list-off: " &c(已禁用)"
+  list-max: "最高 {level}"
+  help-title: "&5✦ &dPrismEnchants"
+  help:
+    - "&7/pe list"
+    - "&7/pe enchanter"
+    - "&7/pe tinkerer"
+  help-admin:
+    - "&7/pe give <附魔> [等级]"
+    - "&7/pe scroll <white|black>"
+    - "&7/pe reload"
 items:
   book-success: "&a成功率: &f{percent}%"
   book-destroy: "&c摧毁率: &f{percent}%"
@@ -42,6 +53,7 @@ items:
     - "&7并将其作为附魔书返还。"
     - ""
     - "&7点击物品，或使用铁砧。"
+  protected: "&b已保护 &7(不会被摧毁)"
 gui:
   enchanter-title: "&5✦ &d附魔台"
   tinkerer-title: "&5✦ &d物品分解台"
@@ -61,3 +73,23 @@ gui:
   sell-desc:
     - "&7将附魔装备/书放置在上方，"
     - "&7然后点击出售获得经验值。"
+rarity:
+  common: "普通"
+  uncommon: "不凡"
+  rare: "稀有"
+  epic: "史诗"
+  legendary: "传说"
+  mythic: "神话"
+category:
+  sword: "剑"
+  axe: "斧"
+  melee: "剑与斧"
+  pickaxe: "镐"
+  tool: "工具"
+  bow: "弓"
+  helmet: "头盔"
+  chestplate: "胸甲"
+  leggings: "护腿"
+  boots: "靴子"
+  armor: "盔甲"
+  all: "任意物品"
